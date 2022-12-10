@@ -1,14 +1,15 @@
+require('dotenv').config();
+
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
-const { NETWORK_LINK, PNEUMONIC_PRHASE } = require('../credentials');
 
 const { abi, evm } = require('../ethereum/build/Factory.json');
 
 const provider = new HDWalletProvider(
-  PNEUMONIC_PRHASE,
+  process.env.PNEUMONIC_PRHASE,
   // instead of using an ethereum local machine,
   // we use Infura which is free service
-  NETWORK_LINK
+  process.env.NETWORK_LINK
 );
 
 const web3 = new Web3(provider);
