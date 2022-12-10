@@ -2,3 +2,4 @@ credentials
 **/node_modules
 .next
 Campaign-sol.txt
+.env
