@@ -36,7 +36,7 @@ export default function PageLayout({ children }) {
   return (
     <Layout style={{ minHeight: '100vh' }} hasSider>
       <Sider
-        breakpoint="md"
+        breakpoint="md" // md = 768
         onBreakpoint={(isBroken) => setCollapsed(isBroken)}
         theme="light"
         collapsedWidth={100}
