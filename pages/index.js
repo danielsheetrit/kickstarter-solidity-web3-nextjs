@@ -1,40 +1,37 @@
-import { useEffect, useState } from 'react';
-
 // factory contract
 import Factory from '../ethereum/factory';
 
+// components
 import Meta from '../components/Meta';
 import PageHeader from '../components/PageHeader';
+import CampaignsList from '../components/CampaignsList';
 
-export default function Home() {
-  const [campaigns, setCampaigns] = useState([]);
+// antd
+import { Button, Divider } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 
-  // useEffect(() => {
-  //   (async () => {
-  //     try {
-  //       const campaigns = await Factory.methods.getDeployedCampaigns().call();
-  //       console.log(campaigns);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   })();
-  // });
-
+export default function Campaigns({ campaigns }) {
   return (
     <>
       <Meta />
-      <PageHeader title="First Page" description="her you can do blala" />
+      <div className="flex-row-between">
+        <PageHeader
+          withoutDevider
+          title="Campaings"
+          body="Here you can find a list of all the campaigns."
+        />
+        <Button type="primary" icon={<PlusOutlined />} size="large">
+          Create Campaign
+        </Button>
+      </div>
+
+      <Divider style={{ borderBlockStart: '1.5px solid #1890ff' }} />
+      <CampaignsList campaigns={campaigns} />
     </>
   );
 }
 
-// export async function getServerSideProps() {
-//   // Fetch data from external API
-//   const res = await fetch(`http://localhost:3000/api/factory`);
-
-//   console.log(res);
-//   const data = JSON.parse(JSON.stringify(res));
-
-//   // Pass data to the page via props
-//   return { props: { data } };
-// }
+Campaigns.getInitialProps = async () => {
+  const campaigns = await Factory.methods.getCampaigns().call();
+  return { campaigns };
+};

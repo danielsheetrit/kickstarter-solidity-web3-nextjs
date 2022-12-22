@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Antd
-import { RiseOutlined, TeamOutlined } from '@ant-design/icons';
+import { AppstoreAddOutlined } from '@ant-design/icons';
 import { Layout, Menu, Typography } from 'antd';
 
 const { Title } = Typography;
@@ -17,11 +17,11 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem('Option 1', '1', <RiseOutlined />),
-  getItem('Team', 'sub2', <TeamOutlined />, [
-    getItem('Team 1', '6'),
-    getItem('Team 2', '8'),
-  ]),
+  getItem('Campaigns', '1', <AppstoreAddOutlined />),
+  // getItem('Team', 'sub2', <TeamOutlined />, [
+  //   getItem('Team 1', '6'),
+  //   getItem('Team 2', '8'),
+  // ]),
 ];
 
 export default function PageLayout({ children }) {
@@ -39,7 +39,7 @@ export default function PageLayout({ children }) {
         breakpoint="md" // md = 768
         onBreakpoint={(isBroken) => setCollapsed(isBroken)}
         theme="light"
-        collapsedWidth={100}
+        collapsedWidth={75}
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
@@ -61,7 +61,8 @@ export default function PageLayout({ children }) {
       <Layout
         style={{
           paddingTop: '64px',
-          paddingLeft: '48px'
+          paddingLeft: '32px',
+          paddingRight: '32px',
         }}
       >
         {children}

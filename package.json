@@ -19,7 +19,7 @@
     "react-dom": "18.2.0",
     "solc": "0.8.9",
     "styled-components": "^5.3.6",
-    "web3": "1.7.4"
+    "web3": "1.6.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.3"

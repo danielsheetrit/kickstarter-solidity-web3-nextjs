@@ -1,0 +1,17 @@
+.campaign-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/* its children */
+.campaign-list-container > * {
+    margin: 0.25rem;
+    /* width: 100%; */
+}
+
+@media (max-width: 768px) {
+    .campaign-list-container > * {
+        width: 100%;
+    }
+}

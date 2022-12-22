@@ -8,3 +8,12 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* classnames presets */
+.space-bottom-full > * {
+    margin-block-end: 1rem;
+}
+
+.space-bottom-half > * {
+    margin-block-end: 0.5rem;
+}
