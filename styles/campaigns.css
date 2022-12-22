@@ -1,3 +1,4 @@
+/* handle container */
 .flex-row-between {
     display: flex;
     flex-direction: row;
@@ -5,18 +6,22 @@
     align-items: flex-end;
 }
 
+/* handle button */
 @media (max-width: 524px) {
     .flex-row-between {
         flex-direction: column;
         align-items: flex-start;
     }
-    .flex-row-between > button {
+    .flex-row-between > a {
        margin-block-start: 1rem;
     }
 }
 
 @media (max-width: 450px) {
-    .flex-row-between > button {
+    .flex-row-between > a > button {
        width: 100% !important;
     }
+    .flex-row-between > a {
+        width: 100% !important;
+     }
 }

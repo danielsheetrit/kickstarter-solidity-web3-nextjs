@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
+// next
+import { useRouter } from 'next/router';
 
 // Antd
-import { AppstoreAddOutlined } from '@ant-design/icons';
+import { AppstoreAddOutlined, PlusOutlined } from '@ant-design/icons';
 import { Layout, Menu, Typography } from 'antd';
+
+// components
+import Loader from './Loader';
 
 const { Title } = Typography;
 const { Sider } = Layout;
@@ -17,7 +22,8 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem('Campaigns', '1', <AppstoreAddOutlined />),
+  getItem('Campaigns', '/', <AppstoreAddOutlined />),
+  getItem('Create Campaign', '/create-campagin', <PlusOutlined />),
   // getItem('Team', 'sub2', <TeamOutlined />, [
   //   getItem('Team 1', '6'),
   //   getItem('Team 2', '8'),
@@ -26,13 +32,37 @@ const items = [
 
 export default function PageLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [currentPageRoute, setCurrentPageRoute] = useState([]);
+
+  const router = useRouter();
 
   useEffect(() => {
+    if (router.pathname) {
+      setCurrentPageRoute([router.pathname]);
+    }
+
     if (window.innerWidth <= 768) {
       setCollapsed(true);
     }
-  }, []);
+  }, [router.pathname]);
 
+  // loader logic
+  useEffect(() => {
+    const handleStart = (url) => url !== router.asPath && setLoading(true);
+    const handleComplete = (url) => url === router.asPath && setLoading(false);
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  });
+  console.log(currentPageRoute);
   return (
     <Layout style={{ minHeight: '100vh' }} hasSider>
       <Sider
@@ -53,9 +83,11 @@ export default function PageLayout({ children }) {
 
         <Menu
           theme="light"
-          defaultSelectedKeys={['1']}
+          // defaultSelectedKeys={currentPageRoute}
+          selectedKeys={currentPageRoute}
           mode="inline"
           items={items}
+          onClick={({ key }) => router.push(key)}
         />
       </Sider>
       <Layout
@@ -65,7 +97,7 @@ export default function PageLayout({ children }) {
           paddingRight: '32px',
         }}
       >
-        {children}
+        {loading ? <Loader /> : children}
       </Layout>
     </Layout>
   );
