@@ -1,6 +1,3 @@
-//next
-// import Link from 'next/link';
-
 // factory contract
 import Factory from '../ethereum/factory';
 
@@ -8,10 +5,6 @@ import Factory from '../ethereum/factory';
 import Meta from '../components/Meta';
 // import PageHeader from '../components/PageHeader';
 import CampaignsList from '../components/CampaignsList';
-
-// // antd
-// import { Button, Divider } from 'antd';
-// import { PlusOutlined } from '@ant-design/icons';
 
 export default function Campaigns({ campaigns }) {
   return (
