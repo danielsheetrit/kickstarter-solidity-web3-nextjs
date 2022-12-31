@@ -1,18 +1,12 @@
-import { Spin } from 'antd';
+import { Loader as LoadingUi } from 'semantic-ui-react';
 
-export default function Loader({ size }) {
+export default function Loader() {
   return (
-    <div
-      style={{
-        height: '100vh',
-        margin: '40vh auto',
-      }}
-    >
-      <Spin size={size} />
-    </div>
+    <LoadingUi
+      active
+      inline="centered"
+      className="loader-itself"
+      size="large"
+    />
   );
 }
-
-Loader.defaultProps = {
-  size: 'large',
-};
