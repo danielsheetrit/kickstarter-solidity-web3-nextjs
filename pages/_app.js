@@ -1,9 +1,10 @@
 // css imports
 import '../styles/global.css';
 import '../styles/campaigns.css';
-import '../styles/campaigns-list.css';
+import '../styles/campaign-card.css';
 import '../styles/nav.css';
 import '../styles/loader.css';
+import '../styles/hamburger-button.css';
 
 // semantic
 import 'semantic-ui-css/semantic.min.css';
