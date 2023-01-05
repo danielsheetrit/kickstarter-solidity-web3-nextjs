@@ -4,7 +4,8 @@ import '../styles/campaigns.css';
 import '../styles/campaign-card.css';
 import '../styles/nav.css';
 import '../styles/loader.css';
-import '../styles/hamburger-button.css';
+import '../styles/section-header.css';
+
 
 // semantic
 import 'semantic-ui-css/semantic.min.css';

@@ -1,0 +1,13 @@
+.section-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.section-header-title {
+    margin-bottom: 6px !important;
+}
+
+.section-header-subtitle {
+    color: rgba(0,0,0,.6);
+}

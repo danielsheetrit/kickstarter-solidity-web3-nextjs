@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { Header, Icon, Menu, Button } from 'semantic-ui-react';
+import { Header, Icon, Menu, Button, Divider } from 'semantic-ui-react';
 
 const EXCLUDED_CLASSNAME = 'excluded-for-outside-click';
 
@@ -50,36 +50,40 @@ export default function Nav() {
   });
 
   return (
-    <div className="nav-box-flex">
-      <Header as="h1" className="nav-logo">
-        <Icon name="rocket" className="rocket-icon-nav" />
-        KickCoin
-      </Header>
+    <>
+      <div className="nav-box-flex">
+        <Header as="h1" className="nav-logo">
+          <Icon name="rocket" className="rocket-icon-nav" />
+          KickCoin
+        </Header>
 
-      <Button
-        className={`hamburger-button ${EXCLUDED_CLASSNAME}`}
-        onClick={() => setIsOpen((prev) => !prev)}
-      >
-        <Icon name="bars" className={EXCLUDED_CLASSNAME} />
-        menu
-      </Button>
+        <Button
+          className={`hamburger-button ${EXCLUDED_CLASSNAME}`}
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          <Icon name="bars" className={EXCLUDED_CLASSNAME} />
+          menu
+        </Button>
 
-      <div ref={ref} className={`nav-menu ${isOpen ? 'open' : ''}`}>
-        <div className="menu-flex">
-          {routes.map((route) => {
-            return (
-              <Menu.Item
-                icon={route.icon}
-                className="menu-flex-item"
-                key={route.path}
-                name={route.name}
-                active={router.pathname === route.path}
-                onClick={handleNavigation}
-              />
-            );
-          })}
+        <div ref={ref} className={`nav-menu ${isOpen ? 'open' : ''}`}>
+          <div className="menu-flex">
+            {routes.map((route) => {
+              return (
+                <Menu.Item
+                  icon={route.icon}
+                  className="menu-flex-item"
+                  key={route.path}
+                  name={route.name}
+                  active={router.pathname === route.path}
+                  onClick={handleNavigation}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    
+      <Divider className='nav-divider' />
+    </>
   );
 }

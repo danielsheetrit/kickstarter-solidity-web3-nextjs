@@ -4,7 +4,7 @@
     align-items: center;
 
     padding-top: 40px;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .nav-logo {
@@ -24,7 +24,7 @@
 .nav-menu {
     position: fixed;
     z-index: 999;
-    background-color: rgb(239, 239, 239) ;
+    background-color: rgb(239, 239, 239);
     margin: 0 !important;
     top: 0;
     left: 0px;
@@ -47,9 +47,7 @@
 
 /* inside the menu */
 .menu-flex {
-    /* display: ; */
     padding-top: 40px;
-
 }
 
 .menu-flex-item {
@@ -58,21 +56,26 @@
     padding: 10px;
     margin-top: 5px;
     font-weight: 600 !important;
-    color: rgba(0,0,0,.6);
+    color: rgba(0, 0, 0, 0.6);
     border-left: 4px solid rgba(26, 143, 172, 0);
-    /* border: px solid black; */
     cursor: pointer;
 }
 
 .menu-flex-item:hover {
-    /* color: rgb(26, 143, 172); */
-    /* background-color: rgb(78, 188, 190); */
-    /* border-left: 4px solid rgb(112, 207, 230); */
     color: rgb(255, 61, 61);
 }
 
 .menu-flex-item.active {
-    /* background-color: rgb(192, 192, 192); */
     color: rgb(255, 61, 61);
     border-left: 4px solid rgb(255, 61, 61);
+}
+
+.hamburger-button {
+    display: flex !important;
+    align-items: center;
+    margin: 0 !important;
+}
+
+.nav-divider {
+    margin-bottom: 60px !important;
 }
