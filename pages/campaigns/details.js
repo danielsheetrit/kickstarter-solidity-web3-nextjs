@@ -7,6 +7,8 @@ import PageHeader from '../../components/PageHeader';
 import CampaignDetailsCard from '../../components/CampaignDetailsCard';
 import CampaignDetailsContribute from '../../components/CampaignDetailsContribute';
 
+import web3 from '../../ethereum/web3';
+
 const { Row, Column } = Grid;
 
 export default function CampaignDetails({
@@ -60,13 +62,13 @@ export default function CampaignDetails({
       <Grid style={{ marginTop: 32 }}>
         <Row>
           <CampaignDetailsCard
-            title="Minimum contribution"
+            title="Minimum Contribution"
             description={`${minContribution} (wei)`}
             body="You must contribute at least this much wei to become an approver"
           />
           <CampaignDetailsCard
             title="Balance"
-            description={`${balance} (ether)`}
+            description={`${web3.utils.fromWei(balance, 'ether')} (ether)`}
             body="The balance is how much money this campaign has left to spend"
           />
         </Row>
@@ -76,7 +78,7 @@ export default function CampaignDetails({
             description={requestsCount}
             body="A request tries to withdraw money from the campaign, Requests must be approved by the approvers"
           >
-            <Label className="requsts-btn">View Requests</Label>
+            <Label className="requsts-btn btn">View Requests</Label>
           </CampaignDetailsCard>
 
           <CampaignDetailsCard
@@ -87,7 +89,7 @@ export default function CampaignDetails({
         </Row>
       </Grid>
 
-      <CampaignDetailsContribute />
+      <CampaignDetailsContribute address={campaignAddress} />
 
       <Grid stackable style={{ marginTop: 48 }}>
         <Row>

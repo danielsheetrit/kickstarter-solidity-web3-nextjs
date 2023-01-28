@@ -24,11 +24,11 @@ export default function Create() {
   const handleSubmit = async (ev) => {
     ev.preventDefault();
 
+    const amount = parseFloat(minContribution, 10);
+
+    if (amount <= 0 || isNaN(amount)) return;
+
     setStatus('loading');
-
-    const amount = parseInt(minContribution, 10);
-
-    if (amount >= 0) return;
 
     try {
       const accounts = await web3.eth.getAccounts();
@@ -39,7 +39,7 @@ export default function Create() {
 
       setStatus('complete');
     } catch (err) {
-      console.log(err);
+      console.error(err);
       setStatus('error');
     }
   };
@@ -94,12 +94,16 @@ export default function Create() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          paddingBottom: status && 40
+          paddingBottom: status ? 40 : 16,
         }}
         placeholder
       >
         <Header icon style={{ marginBottom: 24 }}>
-          <Icon style={{ fontSize: 26, marginBottom: 8 }} name="asterisk" color="grey" />
+          <Icon
+            style={{ fontSize: 26, marginBottom: 8 }}
+            name="asterisk"
+            color="grey"
+          />
           Minimum contribution is required <br /> in order to inform donators
           about this campaign
         </Header>
@@ -131,7 +135,7 @@ export default function Create() {
                     style={{ marginBottom: 0, marginRight: 24 }}
                   />
 
-                  <Button>Create</Button>
+                  <Button className="btn">Create</Button>
                 </Form.Field>
               </Container>
             </Form>

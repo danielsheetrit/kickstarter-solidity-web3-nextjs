@@ -60,7 +60,7 @@ export default function Nav() {
         </Header>
 
         <Button
-          className={`hamburger-button ${EXCLUDED_CLASSNAME}`}
+          className={`hamburger-button ${EXCLUDED_CLASSNAME} btn`}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <Icon name="bars" className={EXCLUDED_CLASSNAME} />

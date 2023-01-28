@@ -1,10 +1,10 @@
 import { Link } from '../routes';
 
-import { Card, Divider } from 'semantic-ui-react';
+import { Card, Divider, Button } from 'semantic-ui-react';
 
 export default function CampaignCard({ singleCampaign }) {
   return (
-    <Card style={{ maxWidth: 342 }}>
+    <Card className="campaign-card">
       <Card.Content className="campaign-card-header">
         <div style={{ width: '100%' }}>
           <p style={{ overflowWrap: 'break-word' }}>
@@ -15,12 +15,14 @@ export default function CampaignCard({ singleCampaign }) {
       </Card.Content>
       <Divider className="campaign-card-divider" />
       <Card.Description className="campaign-card-desc">
-        <Link
-          style={{ textDecoration: 'underline' }}
-          route={`campaigns/${singleCampaign}`}
-        >
-          View More
-        </Link>
+        <Button className="btn" size='mini'>
+          <Link
+            style={{ color: '#333' }}
+            route={`campaigns/${singleCampaign}`}
+          >
+            View More
+          </Link>
+        </Button>
       </Card.Description>
     </Card>
   );
