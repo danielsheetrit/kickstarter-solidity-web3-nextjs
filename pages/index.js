@@ -8,7 +8,7 @@ import PageHeader from '../components/PageHeader';
 
 export default function Campaigns({ campaigns }) {
   return (
-    <div>
+    <>
       <Meta title="Kick Coin | Campaigns" />
 
       <PageHeader
@@ -17,7 +17,7 @@ export default function Campaigns({ campaigns }) {
       />
 
       {campaigns && <CampaignsList campaigns={campaigns} />}
-    </div>
+    </>
   );
 }
 

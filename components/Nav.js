@@ -13,7 +13,7 @@ const routes = [
     icon: <Icon name="th list" />,
   },
   {
-    path: 'campaigns/create',
+    path: '/campaigns/create',
     name: 'Create Campaign',
     icon: <Icon name="plus" />,
   },

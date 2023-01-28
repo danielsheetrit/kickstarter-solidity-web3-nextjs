@@ -27,7 +27,7 @@ export default function PageLayout({ children }) {
   });
 
   return (
-    <Container text className='layout-container'>
+    <Container text>
       <Nav />
       {loading ? <Loader /> : children}
     </Container>
