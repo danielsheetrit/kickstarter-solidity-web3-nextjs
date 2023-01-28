@@ -5,7 +5,7 @@ const { abi } = Factory;
 
 const instance = new web3.eth.Contract(
   abi,
-  '0x7b18820bc8e02753877d45b0479e98C716B0FD01'
+  '0x53dB8e711073f8F160d3e5f5729B877C338f5E9A'
 );
 
 export default instance;
