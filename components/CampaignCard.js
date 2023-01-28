@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Card, Divider, Popup, Icon, Button } from 'semantic-ui-react';
+import { Card, Divider, Popup, Button } from 'semantic-ui-react';
 
 export default function CampaignCard({ singleCampaign }) {
   const [isMobile, setIsMobile] = useState(false);
