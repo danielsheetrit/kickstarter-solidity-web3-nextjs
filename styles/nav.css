@@ -18,7 +18,7 @@
     font-size: 32px !important;
     margin: 0 !important;
     margin-right: 4px !important;
-    color: rgb(255, 61, 61) !important;
+    color: rgb(61, 152, 255) !important;
 }
 
 .nav-menu {
@@ -62,12 +62,12 @@
 }
 
 .menu-flex-item:hover {
-    color: rgb(255, 61, 61);
+    color: rgb(61, 152, 255);
 }
 
 .menu-flex-item.active {
-    color: rgb(255, 61, 61);
-    border-left: 4px solid rgb(255, 61, 61);
+    color: rgb(61, 152, 255);
+    border-left: 4px solid rgb(61, 152, 255);
 }
 
 .hamburger-button {

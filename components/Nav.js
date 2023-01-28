@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { Header, Icon, Menu, Button, Divider } from 'semantic-ui-react';
 
+// import { Router } from '../routes';
+
 const EXCLUDED_CLASSNAME = 'excluded-for-outside-click';
 
 const routes = [
@@ -11,7 +13,7 @@ const routes = [
     icon: <Icon name="th list" />,
   },
   {
-    path: '/create-campaign',
+    path: 'campaigns/create',
     name: 'Create Campaign',
     icon: <Icon name="plus" />,
   },

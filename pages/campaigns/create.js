@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import Factory from '../ethereum/factory';
-import web3 from '../ethereum/web3';
+import Factory from '../../ethereum/factory';
+import web3 from '../../ethereum/web3';
 
-import PageHeader from '../components/PageHeader';
-import Meta from '../components/Meta';
+import PageHeader from '../../components/PageHeader';
+import Meta from '../../components/Meta';
 
 import {
   Button,
@@ -17,7 +17,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-export default function CreateCampaign() {
+export default function Create() {
   const [minContribution, setMinContribution] = useState('');
   const [status, setStatus] = useState('');
 

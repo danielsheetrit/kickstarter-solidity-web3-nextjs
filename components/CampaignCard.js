@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { Link } from '../routes';
+
 import { Card, Divider, Popup, Button } from 'semantic-ui-react';
 
 export default function CampaignCard({ singleCampaign }) {
@@ -43,7 +45,7 @@ export default function CampaignCard({ singleCampaign }) {
       </Card.Content>
       <Divider className="campaign-card-divider" />
       <Card.Description className="campaign-card-desc">
-        <a>View More</a>
+        <Link route={`campaigns/${singleCampaign}`}>View More</Link>
       </Card.Description>
     </Card>
   );
