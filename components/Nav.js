@@ -69,6 +69,7 @@ export default function Nav() {
 
         <div ref={ref} className={`nav-menu ${isOpen ? 'open' : ''}`}>
           <div className="menu-flex">
+            <Divider style={{ width: '100%' }} />
             {routes.map((route) => {
               return (
                 <Menu.Item
@@ -84,8 +85,8 @@ export default function Nav() {
           </div>
         </div>
       </div>
-    
-      <Divider className='nav-divider' />
+
+      <Divider className="nav-divider" />
     </>
   );
 }

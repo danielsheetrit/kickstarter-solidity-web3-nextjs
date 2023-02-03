@@ -95,6 +95,8 @@ export default function Create() {
           alignItems: 'center',
           justifyContent: 'center',
           paddingBottom: status ? 40 : 16,
+          borderRadius: 0,
+          backgroundColor: 'transparent',
         }}
         placeholder
       >

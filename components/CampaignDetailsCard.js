@@ -8,7 +8,7 @@ export default function CampaignDetailsCard({
 }) {
   return (
     <Grid.Column stretched width={8}>
-      <Card style={{ width: '100%' }}>
+      <Card style={{ width: '100%', borderRadius: 0 }}>
         <Card.Content>
           <Card.Header
             style={{

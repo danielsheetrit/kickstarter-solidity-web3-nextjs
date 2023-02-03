@@ -31,11 +31,30 @@ input[type="number"] {
 
 .btn {
     cursor: pointer;
+    color: white !important;
     transition: 0.1s ease-in !important;
-    border: 1px solid rgb(61, 152, 255) !important;
-    background-color: transparent !important;
+    background-color: rgb(61, 152, 255) !important;
+    border-radius: 0px !important;
 }
 
 .btn:hover {
-    background-color: rgb(61, 152, 255) !important;
+    background-color: rgb(0, 118, 254) !important;
+}
+
+
+/* contribute campaign css override */
+#__next > div > div:nth-child(5) > form > div > div {
+    border-radius: 0px;
+}
+
+#__next > div > div:nth-child(5) > form > div > input[type="number"] {
+    border-radius: 0px;
+}
+
+#__next > div > div.ui.placeholder.segment > div.inline > form > div > div > div > input[type=number] {
+    border-radius: 0px;
+}
+
+#__next > div > div.ui.placeholder.segment > div.inline > form > div > div > div > div {
+    border-radius: 0px;
 }

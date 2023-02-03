@@ -4,7 +4,7 @@ import { Card, Divider, Button } from 'semantic-ui-react';
 
 export default function CampaignCard({ singleCampaign }) {
   return (
-    <Card className="campaign-card">
+    <Card style={{ borderRadius: 0 }} className="campaign-card">
       <Card.Content className="campaign-card-header">
         <div style={{ width: '100%' }}>
           <p style={{ overflowWrap: 'break-word' }}>
@@ -15,9 +15,18 @@ export default function CampaignCard({ singleCampaign }) {
       </Card.Content>
       <Divider className="campaign-card-divider" />
       <Card.Description className="campaign-card-desc">
-        <Button className="btn" size='mini'>
+        <Button
+          style={{ width: '100%', padding: 0 }}
+          className="btn"
+          size="mini"
+        >
           <Link
-            style={{ color: '#333' }}
+            style={{
+              color: 'whitesmoke',
+              width: '100%',
+              display: 'block',
+              padding: '10px',
+            }}
             route={`campaigns/${singleCampaign}`}
           >
             View More
