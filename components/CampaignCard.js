@@ -15,23 +15,11 @@ export default function CampaignCard({ singleCampaign }) {
       </Card.Content>
       <Divider className="campaign-card-divider" />
       <Card.Description className="campaign-card-desc">
-        <Button
-          style={{ width: '100%', padding: 0 }}
-          className="btn"
-          size="mini"
-        >
-          <Link
-            style={{
-              color: 'whitesmoke',
-              width: '100%',
-              display: 'block',
-              padding: '10px',
-            }}
-            route={`campaigns/${singleCampaign}`}
-          >
+        <Link route={`campaigns/${singleCampaign}`}>
+          <Button style={{ width: '100%' }} className="btn" size="mini">
             View More
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </Card.Description>
     </Card>
   );

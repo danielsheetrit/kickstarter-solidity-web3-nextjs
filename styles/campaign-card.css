@@ -3,12 +3,6 @@
     width: 100% !important;
 }
 
-@media (max-width: 375px) {
-    .campaign-card {
-        max-width: 300px !important;
-    }
-}
-
 .campaign-card-header {
     display: flex;
     align-items: center !important;

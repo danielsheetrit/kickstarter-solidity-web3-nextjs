@@ -29,7 +29,8 @@ export default function PageLayout({ children }) {
   return (
     <Container text>
       <Nav />
-      {loading ? <Loader /> : children}
+      {loading && <Loader />}
+      {!loading && children}
     </Container>
   );
 }

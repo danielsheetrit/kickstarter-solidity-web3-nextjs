@@ -16,9 +16,9 @@ export default function CampaignsList({ campaigns }) {
   }
 
   return (
-    <Card.Group>
-      {campaigns.map((campaign, idx) => (
-        <CampaignCard key={idx} singleCampaign={campaign} />
+    <Card.Group className='campaign-list'>
+      {campaigns.map((campaign) => (
+        <CampaignCard key={campaign} singleCampaign={campaign} />
       ))}
     </Card.Group>
   );

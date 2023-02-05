@@ -1,4 +1,5 @@
-import { Grid, Header, Label } from 'semantic-ui-react';
+import { Grid, Label } from 'semantic-ui-react';
+import { Link } from '../../routes';
 
 import Campaign from '../../ethereum/campaign';
 import Meta from '../../components/Meta';
@@ -6,10 +7,11 @@ import Meta from '../../components/Meta';
 import PageHeader from '../../components/PageHeader';
 import CampaignDetailsCard from '../../components/CampaignDetailsCard';
 import CampaignDetailsContribute from '../../components/CampaignDetailsContribute';
+import CampaignDetailsAddresses from '../../components/CampaignDetailsAddresses';
 
 import web3 from '../../ethereum/web3';
 
-const { Row, Column } = Grid;
+const { Row } = Grid;
 
 export default function CampaignDetails({
   campaignAddress,
@@ -19,37 +21,6 @@ export default function CampaignDetails({
   approversCount,
   manager,
 }) {
-  const addressesCard = (title, address, description) => {
-    return (
-      <Column stretched width={8}>
-        <Header style={{ margin: 0 }} as="h4">
-          {title}
-        </Header>
-
-        <span
-          style={{
-            color: 'gray',
-            overflowWrap: 'break-word',
-            fontSize: 14,
-            marginTop: 6,
-          }}
-        >
-          {description}
-        </span>
-
-        <p
-          style={{
-            overflowWrap: 'break-word',
-            fontSize: 16,
-            marginTop: 6,
-          }}
-        >
-          {address}
-        </p>
-      </Column>
-    );
-  };
-
   return (
     <>
       <Meta title="Kick Coin | Campaign Information" />
@@ -78,7 +49,9 @@ export default function CampaignDetails({
             description={requestsCount}
             body="A request tries to withdraw money from the campaign, Requests must be approved by the approvers"
           >
-            <Label className="requsts-btn btn">View Requests</Label>
+            <Link route={`/campaigns/${campaignAddress}/requests`}>
+              <Label className="requsts-btn btn">View Requests</Label>
+            </Link>
           </CampaignDetailsCard>
 
           <CampaignDetailsCard
@@ -93,16 +66,16 @@ export default function CampaignDetails({
 
       <Grid stackable style={{ marginTop: 48 }}>
         <Row>
-          {addressesCard(
-            'Campaign No.',
-            campaignAddress,
-            'Unique Address that represents the campaign, and can be reconized by'
-          )}
-          {addressesCard(
-            'Manager Address',
-            manager,
-            'The manager created this campaign and can create requests to withdraw money'
-          )}
+          <CampaignDetailsAddresses
+            title="Campaign No."
+            description="Unique Address that represents the campaign, and can be reconized by"
+            address={campaignAddress}
+          />
+          <CampaignDetailsAddresses
+            title="Manager Address"
+            description="The manager created this campaign and can create requests to withdraw money"
+            address={manager}
+          />
         </Row>
       </Grid>
     </>

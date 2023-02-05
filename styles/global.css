@@ -42,7 +42,7 @@ input[type="number"] {
 }
 
 
-/* contribute campaign css override */
+/* input css override */
 #__next > div > div:nth-child(5) > form > div > div {
     border-radius: 0px;
 }
