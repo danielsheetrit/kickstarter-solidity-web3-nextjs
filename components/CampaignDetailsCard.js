@@ -10,36 +10,16 @@ export default function CampaignDetailsCard({
     <Grid.Column stretched width={8}>
       <Card style={{ width: '100%', borderRadius: 0 }}>
         <Card.Content>
-          <Card.Header
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'end',
-              flexWrap: 'wrap',
-            }}
-          >
+          <Card.Header className="campaign-details-card-header">
             {title}
             {children}
           </Card.Header>
 
-          <Card.Description
-            style={{
-              marginTop: 8,
-              fontWeight: 'bold',
-              color: '#3d98ff',
-            }}
-          >
+          <Card.Description className="campaign-details-card-description">
             {description}
           </Card.Description>
 
-          <span
-            style={{
-              color: 'gray',
-              fontSize: 14,
-              marginTop: 8,
-              display: 'block',
-            }}
-          >
+          <span className="campaign-details-card-description-secondary">
             {body}
           </span>
         </Card.Content>

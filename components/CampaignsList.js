@@ -11,6 +11,7 @@ export default function CampaignsList({ campaigns }) {
         bodyTxt="You don't have any campaigns yet."
         linkTxt="Create new campaign"
         linkPath="/campaigns/create"
+        mode="warning"
       />
     );
   }

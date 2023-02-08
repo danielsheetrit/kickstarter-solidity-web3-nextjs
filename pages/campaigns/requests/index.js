@@ -1,7 +1,8 @@
 import Meta from '../../../components/Meta';
 import PageHeader from '../../../components/PageHeader';
+import RequestCreate from '../../../components/RequestCreate';
 
-export default function Requests() {
+export default function Requests({ address }) {
   return (
     <>
       <Meta title="Kick Coin | Requests" />
@@ -10,6 +11,8 @@ export default function Requests() {
         title="Requests"
         description="Browse requests and create new ones"
       />
+
+      <RequestCreate address={address} />
     </>
   );
 }

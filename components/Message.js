@@ -1,9 +1,19 @@
+import { useMemo } from 'react';
 import { Link } from '../routes';
-import { Container, Icon, Message } from 'semantic-ui-react';
+import { Container, Icon, Message as MassageCard } from 'semantic-ui-react';
 
-export default function MessageCard({ iconName, bodyTxt, linkTxt, linkPath }) {
+export default function Message({
+  iconName,
+  bodyTxt,
+  linkTxt,
+  linkPath,
+  mode, // type of string
+  setOpen
+}) {
+  const currentMode = useMemo(() => ({ [mode]: !!mode }), [mode]);
+
   return (
-    <Message>
+    <MassageCard {...currentMode} onDismiss={() => setOpen(false)}>
       <Container style={{ display: 'flex', alignItems: 'center' }}>
         {iconName && (
           <Icon
@@ -14,9 +24,10 @@ export default function MessageCard({ iconName, bodyTxt, linkTxt, linkPath }) {
         )}
         <Container>
           <p style={{ marginBottom: 0 }}>{bodyTxt}</p>
+
           {linkTxt && <Link route={linkPath}>{linkTxt}</Link>}
         </Container>
       </Container>
-    </Message>
+    </MassageCard>
   );
 }

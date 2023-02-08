@@ -35,6 +35,7 @@ input[type="number"] {
     transition: 0.1s ease-in !important;
     background-color: rgb(61, 152, 255) !important;
     border-radius: 0px !important;
+    font-size: 14px !important;
 }
 
 .btn:hover {

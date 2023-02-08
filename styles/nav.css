@@ -11,7 +11,9 @@
     display: flex;
     align-items: flex-start;
     margin: 0 !important;
-    font-weight: bold !important;
+    /* font-weight: bold !important; */
+    font-size: 36px !important;
+    font-family: 'Righteous', cursive !important;
 }
 
 .rocket-icon-nav {
@@ -47,7 +49,7 @@
 
 /* inside the menu */
 .menu-flex {
-    padding-top: 80px;
+    padding-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +60,8 @@
     padding: 12px;
     color: whitesmoke;
     cursor: pointer;
-    width: calc(100% - 20px);
+    width: calc(100% - 16px);
+    align-self: flex-end;
 }
 
 .menu-flex-item:hover {
@@ -79,4 +82,9 @@
 
 .nav-divider {
     margin-bottom: 60px !important;
+}
+
+.menu-divider {
+    width: calc(100% - 16px) !important;
+    align-self: flex-end;
 }

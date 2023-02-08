@@ -5,33 +5,17 @@ export default function CampaignDetailsAddresses({
   title,
   description,
   address,
+  children,
 }) {
   return (
     <Column stretched width={8}>
       <Header style={{ margin: 0 }} as="h4">
         {title}
       </Header>
+      <span className="campaign-details-addresses-desc">{description}</span>
+      <p className="campaign-details-addresses-address">{address}</p>
 
-      <span
-        style={{
-          color: 'gray',
-          overflowWrap: 'break-word',
-          fontSize: 14,
-          marginTop: 6,
-        }}
-      >
-        {description}
-      </span>
-
-      <p
-        style={{
-          overflowWrap: 'break-word',
-          fontSize: 16,
-          marginTop: 6,
-        }}
-      >
-        {address}
-      </p>
+      {children}
     </Column>
   );
 }

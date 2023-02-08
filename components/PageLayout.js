@@ -27,7 +27,9 @@ export default function PageLayout({ children }) {
   });
 
   return (
-    <Container text>
+    <Container text style={{
+      paddingBottom: 100
+    }}>
       <Nav />
       {loading && <Loader />}
       {!loading && children}

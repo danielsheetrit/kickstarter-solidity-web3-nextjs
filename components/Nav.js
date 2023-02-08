@@ -69,7 +69,7 @@ export default function Nav() {
 
         <div ref={ref} className={`nav-menu ${isOpen ? 'open' : ''}`}>
           <div className="menu-flex">
-            <Divider style={{ width: '100%' }} />
+            <Divider className='menu-divider'/>
             {routes.map((route) => {
               return (
                 <Menu.Item

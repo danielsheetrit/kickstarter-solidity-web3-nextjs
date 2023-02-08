@@ -1,0 +1,27 @@
+.request-create-grid {
+    margin-top: 32px !important;
+}
+
+.request-create-input > input,
+div {
+    border-radius: 0px !important;
+}
+
+.request-create-btn {
+    width: 336px;
+    height: 40px;
+    align-self: flex-end;
+    margin: 0 14px !important;
+}
+
+@media (max-width: 767px) {
+    .request-create-grid {
+        justify-content: center !important;
+    }
+
+    .request-create-btn {
+        width: 100%;
+        margin: 0px !important;
+        margin-top: 36px !important;
+    }
+}

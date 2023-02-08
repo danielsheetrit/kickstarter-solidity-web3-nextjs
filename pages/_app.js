@@ -7,6 +7,9 @@ import '../styles/nav.css';
 import '../styles/loader.css';
 import '../styles/section-header.css';
 import '../styles/requests-button.css';
+import '../styles/request-create.css';
+import '../styles/campaign-details-card.css';
+import '../styles/campaign-details-addresses.css';
 
 // semantic
 import 'semantic-ui-css/semantic.min.css';
