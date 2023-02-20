@@ -16,9 +16,12 @@ export default function PageLayout({ children }) {
   useEffect(() => {
     const handleStart = (url) => url !== router.asPath && setLoading(true);
     const handleComplete = (url) => url === router.asPath && setLoading(false);
+    const handleError = () => setLoading(false);
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleError);
+
 
     return () => {
       router.events.off('routeChangeStart', handleStart);
