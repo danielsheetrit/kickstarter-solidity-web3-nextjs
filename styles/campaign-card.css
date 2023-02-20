@@ -1,6 +1,5 @@
 .campaign-card {
-    max-width: 342px !important;
-    width: 100% !important;
+    flex-grow: 1;
 }
 
 .campaign-card-header {
