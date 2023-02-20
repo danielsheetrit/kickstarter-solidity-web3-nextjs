@@ -24,7 +24,7 @@ export default function PageLayout({ children }) {
       router.events.off('routeChangeStart', handleStart);
       router.events.off('routeChangeComplete', handleComplete);
     };
-  });
+  }, [router]);
 
   return (
     <Container text style={{
