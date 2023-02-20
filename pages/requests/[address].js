@@ -31,7 +31,7 @@ export default function Requests({
           },
           {
             name: 'Requests',
-            href: `/campaigns/${address}/requests`,
+            href: `/requests/${address}`,
           },
         ]}
       />

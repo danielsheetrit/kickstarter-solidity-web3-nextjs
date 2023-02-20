@@ -10,7 +10,7 @@ import PageHeader from './PageHeader';
 import CampaignDetailsAddresses from './CampaignDetailsAddresses';
 import Message from './Message';
 
-const { Row } = Grid;
+const { Row, Column } = Grid;
 
 const requestInitState = {
   description: '',
@@ -117,13 +117,16 @@ export default function RequestCreate({ address }) {
             />
           </CampaignDetailsAddresses>
 
-          <Button
-            loading={loading}
-            onClick={handleSubmit}
-            className="request-create-btn btn"
-          >
-            Create
-          </Button>
+          <Column style={{ justifyContent: 'flex-end' }} stretched width={8}>
+            <Button
+              style={{ maxHeight: 40, margin: 0 }}
+              loading={loading}
+              onClick={handleSubmit}
+              className="request-create-btn btn"
+            >
+              Create
+            </Button>
+          </Column>
         </Row>
       </Grid>
 

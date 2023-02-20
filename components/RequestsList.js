@@ -17,7 +17,7 @@ export default function RequestsList({ requests, address, approversCount }) {
           <Table.Row>
             <Table.HeaderCell>Id</Table.HeaderCell>
             <Table.HeaderCell>Description</Table.HeaderCell>
-            <Table.HeaderCell>Amount</Table.HeaderCell>
+            <Table.HeaderCell>Amount (ether)</Table.HeaderCell>
             <Table.HeaderCell>Recipient</Table.HeaderCell>
             <Table.HeaderCell>Approval Count</Table.HeaderCell>
             <Table.HeaderCell>Approve</Table.HeaderCell>

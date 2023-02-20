@@ -27,7 +27,7 @@ export default function PageLayout({ children }) {
   }, [router]);
 
   return (
-    <Container text style={{
+    <Container style={{
       paddingBottom: 100
     }}>
       <Nav />
