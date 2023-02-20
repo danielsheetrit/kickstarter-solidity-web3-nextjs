@@ -37,7 +37,7 @@ export default function Requests({
       />
 
       <div style={{ marginTop: 46 }}>
-        {requests.length > 0 ? (
+        {requests?.length > 0 ? (
           <RequestsList
             requests={requests}
             requestsCount={requestsCount}
