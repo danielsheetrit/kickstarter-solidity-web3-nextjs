@@ -10,7 +10,7 @@ export default function RequestsList({ requests, address, approversCount }) {
 
   return (
     <>
-      <p style={{ textDecoration: 'underline' }}>{`Found ${requests.length} Requests`}</p>
+      <p style={{ textDecoration: 'underline' }}>{`Found ${requests?.length || 0} Requests`}</p>
 
       <Table style={{ width: '100%' }} basic="very" celled collapsing>
         <Table.Header>
@@ -26,7 +26,7 @@ export default function RequestsList({ requests, address, approversCount }) {
         </Table.Header>
 
         <Table.Body>
-          {requests.map((request, index) => {
+          {requests && requests.map((request, index) => {
             return (
               <RequestRow
                 key={index}
