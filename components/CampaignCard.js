@@ -1,4 +1,4 @@
-import { Link } from '../routes';
+import Link from 'next/link';
 
 import { Card, Divider, Button } from 'semantic-ui-react';
 
@@ -13,7 +13,7 @@ export default function CampaignCard({ singleCampaign }) {
       </Card.Content>
       <Divider className="campaign-card-divider" />
       <Card.Description className="campaign-card-desc">
-        <Link route={`campaigns/${singleCampaign}`}>
+        <Link href={`campaigns/${singleCampaign}`}>
           <Button
             style={{ width: '100%', height: 36 }}
             className="btn"

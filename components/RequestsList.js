@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Table } from 'semantic-ui-react';
 
-import Message from '../../../components/Message';
-import RequestRow from '../../../components/RequestRow';
+import Message from '../components/Message';
+import RequestRow from '../components/RequestRow';
 
 export default function RequestsList({ requests, address, approversCount }) {
   const [open, setOpen] = useState(false);

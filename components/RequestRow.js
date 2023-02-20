@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Table, Button, Popup } from 'semantic-ui-react';
+import { Table, Button } from 'semantic-ui-react';
 
-import { Router } from '../routes';
+import { useRouter } from 'next/router';
 
 import Campaign from '../ethereum/campaign';
 import web3 from '../ethereum/web3';
@@ -18,6 +18,8 @@ export default function RequestRow({
 
   const [loading, setLoading] = useState(false);
   const [finzlizeLoading, setFinzlizeLoading] = useState(false);
+
+  const router = useRouter();
 
   const handleApprove = async () => {
     setLoading(true);
@@ -36,7 +38,7 @@ export default function RequestRow({
         mode: 'success',
       });
 
-      Router.replaceRoute(`/campaigns/${address}/requests`);
+      router.replace(`/requests/${address}`);
     } catch (err) {
       setMsgConfig({
         txt: 'Something went wrong, try again later',
@@ -65,7 +67,7 @@ export default function RequestRow({
         mode: 'success',
       });
 
-      Router.replaceRoute(`/campaigns/${address}/requests`);
+      router.replace(`/requests/${address}`);
     } catch (err) {
       setMsgConfig({
         txt: 'Something went wrong, try again later',

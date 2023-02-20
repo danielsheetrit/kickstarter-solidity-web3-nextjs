@@ -1,12 +1,11 @@
 import { useRouter } from 'next/router';
 
 import { Breadcrumb as BCContainer } from 'semantic-ui-react';
-import { Router } from '../routes';
 
 const { Section, Divider } = BCContainer;
 
 export default function BreadCrumb({ pathes }) {
-  const { asPath } = useRouter();
+  const router = useRouter();
 
   return (
     <BCContainer style={{ display: 'flex' }}>
@@ -15,8 +14,8 @@ export default function BreadCrumb({ pathes }) {
           <div key={path.href}>
             <Section
               key={path.href}
-              active={asPath === path.href}
-              onClick={() => Router.pushRoute(path.href)}
+              active={router.asPath === path.href}
+              onClick={() => router.push(path.href)}
             >
               {path.name}
             </Section>

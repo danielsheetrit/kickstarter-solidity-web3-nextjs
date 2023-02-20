@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Form, Header, Input } from 'semantic-ui-react';
 
-import { Router } from '../routes';
+import { useRouter } from 'next/router';
 
 import Campaign from '../ethereum/campaign';
 import web3 from '../ethereum/web3';
@@ -14,6 +14,8 @@ export default function CampaignDetailsContribute({ address }) {
 
   const [open, setOpen] = useState(false);
   const [msgConfig, setMsgConfig] = useState({ txt: '', mode: '' });
+
+  const router = useRouter();
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
@@ -39,7 +41,7 @@ export default function CampaignDetailsContribute({ address }) {
 
       // replaceRoute only update the changes with the new data
       // but not really "refresh" the page
-      Router.replaceRoute(`/campaigns/${address}`);
+      router.replace(`/campaigns/${address}`);
     } catch (err) {
       setMsgConfig({
         txt: 'Somthing went wrong... try again later',

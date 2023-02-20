@@ -1,11 +1,11 @@
-import Campaign from '../../../ethereum/campaign';
+import Campaign from '../../ethereum/campaign';
 
-import Meta from '../../../components/Meta';
-import PageHeader from '../../../components/PageHeader';
-import RequestsList from './RequestsList';
-import RequestCreate from '../../../components/RequestCreate';
-import Message from '../../../components/Message';
-import BreadCrumb from '../../../components/BreadCrumb';
+import Meta from '../../components/Meta';
+import PageHeader from '../../components/PageHeader';
+import RequestsList from '../../components/RequestsList';
+import RequestCreate from '../../components/RequestCreate';
+import Message from '../../components/Message';
+import BreadCrumb from '../../components/BreadCrumb';
 
 export default function Requests({
   address,

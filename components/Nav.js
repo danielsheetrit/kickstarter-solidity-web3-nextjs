@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { Link } from '../routes';
+import Link from 'next/link';
 import { Header, Icon, Menu, Button, Divider } from 'semantic-ui-react';
-
-// import { Router } from '../routes';
 
 const EXCLUDED_CLASSNAME = 'excluded-for-outside-click';
 
@@ -55,7 +53,7 @@ export default function Nav() {
   return (
     <>
       <div className="nav-box-flex">
-        <Link route="/">
+        <Link href="/">
           <Header as="h1" className="nav-logo">
             <Icon name="rocket" className="rocket-icon-nav" />
             KickCoin

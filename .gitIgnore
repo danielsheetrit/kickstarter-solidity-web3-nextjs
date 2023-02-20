@@ -4,3 +4,4 @@ credentials
 Campaign-sol.txt
 
 ethereum/.env
+.env

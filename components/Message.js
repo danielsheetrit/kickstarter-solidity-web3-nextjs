@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { Link } from '../routes';
+import Link from 'next/link';
+
 import { Container, Icon, Message as MassageCard } from 'semantic-ui-react';
 
 export default function Message({
@@ -28,7 +29,7 @@ export default function Message({
         <Container>
           <p style={{ marginBottom: 0 }}>{bodyTxt}</p>
 
-          {linkTxt && <Link route={linkPath}>{linkTxt}</Link>}
+          {linkTxt && <Link href={linkPath}>{linkTxt}</Link>}
         </Container>
       </Container>
     </MassageCard>

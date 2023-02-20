@@ -1,5 +1,5 @@
 import { Grid, Label } from 'semantic-ui-react';
-import { Link } from '../../routes';
+import Link from 'next/link';
 
 import Campaign from '../../ethereum/campaign';
 import web3 from '../../ethereum/web3';
@@ -10,7 +10,6 @@ import CampaignDetailsCard from '../../components/CampaignDetailsCard';
 import CampaignDetailsContribute from '../../components/CampaignDetailsContribute';
 import CampaignDetailsAddresses from '../../components/CampaignDetailsAddresses';
 import BreadCrumb from '../../components/BreadCrumb';
-
 
 const { Row } = Grid;
 
@@ -60,7 +59,7 @@ export default function CampaignDetails({
             description={requestsCount}
             body="A request tries to withdraw money from the campaign, Requests must be approved by the approvers"
           >
-            <Link route={`/campaigns/${campaignAddress}/requests`}>
+            <Link href={`/requests/${campaignAddress}`}>
               <Label className="requsts-btn btn">View Requests</Label>
             </Link>
           </CampaignDetailsCard>

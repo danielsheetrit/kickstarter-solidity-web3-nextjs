@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+
 import { Button, Input, Grid } from 'semantic-ui-react';
 
-import { Router } from '../routes';
 import Campaign from '../ethereum/campaign';
 import web3 from '../ethereum/web3';
 
@@ -27,6 +28,8 @@ export default function RequestCreate({ address }) {
     mode: '',
   });
 
+  const router = useRouter();
+
   const handleChange = (ev) => {
     const { name, value } = ev.target;
     setRequest((prev) => ({ ...prev, [name]: value }));
@@ -48,7 +51,7 @@ export default function RequestCreate({ address }) {
         .send({ from: accounts[0] });
 
       setMsgConfig({ txt: 'Request created successfuly', mode: 'success' });
-      Router.replaceRoute(`/campaigns/${address}/requests`);
+      router.replace(`/requests/${address}`);
     } catch (err) {
       setMsgConfig({
         txt: 'Somthing went wrong... try again later',
