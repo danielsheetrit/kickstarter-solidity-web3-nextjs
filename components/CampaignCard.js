@@ -7,16 +7,18 @@ export default function CampaignCard({ singleCampaign }) {
     <Card style={{ borderRadius: 0 }} className="campaign-card">
       <Card.Content className="campaign-card-header">
         <div style={{ width: '100%' }}>
-          <p style={{ overflowWrap: 'break-word' }}>
-            <span style={{ fontWeight: 'bold' }}>Campaign No. </span>
-            {singleCampaign}
-          </p>
+          <span style={{ fontWeight: 'bold' }}>Campaign Address</span>
+          <p style={{ overflowWrap: 'break-word' }}>{singleCampaign}</p>
         </div>
       </Card.Content>
       <Divider className="campaign-card-divider" />
       <Card.Description className="campaign-card-desc">
         <Link route={`campaigns/${singleCampaign}`}>
-          <Button style={{ width: '100%', height: 36 }} className="btn" size="mini">
+          <Button
+            style={{ width: '100%', height: 36 }}
+            className="btn"
+            size="mini"
+          >
             View More
           </Button>
         </Link>

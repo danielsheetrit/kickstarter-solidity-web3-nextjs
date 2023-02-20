@@ -1,11 +1,5 @@
 import { useState } from 'react';
 
-import Factory from '../../ethereum/factory';
-import web3 from '../../ethereum/web3';
-
-import PageHeader from '../../components/PageHeader';
-import Meta from '../../components/Meta';
-
 import {
   Button,
   Container,
@@ -16,6 +10,12 @@ import {
   Progress,
   Segment,
 } from 'semantic-ui-react';
+
+import Factory from '../../ethereum/factory';
+import web3 from '../../ethereum/web3';
+
+import PageHeader from '../../components/PageHeader';
+import Meta from '../../components/Meta';
 
 export default function Create() {
   const [minContribution, setMinContribution] = useState('');
@@ -97,6 +97,7 @@ export default function Create() {
           paddingBottom: status ? 40 : 16,
           borderRadius: 0,
           backgroundColor: 'transparent',
+          marginTop: 32,
         }}
         placeholder
       >

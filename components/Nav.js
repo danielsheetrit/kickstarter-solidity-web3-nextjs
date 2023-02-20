@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { Link } from '../routes';
 import { Header, Icon, Menu, Button, Divider } from 'semantic-ui-react';
 
 // import { Router } from '../routes';
@@ -54,22 +55,24 @@ export default function Nav() {
   return (
     <>
       <div className="nav-box-flex">
-        <Header as="h1" className="nav-logo">
-          <Icon name="rocket" className="rocket-icon-nav" />
-          KickCoin
-        </Header>
+        <Link route="/">
+          <Header as="h1" className="nav-logo">
+            <Icon name="rocket" className="rocket-icon-nav" />
+            KickCoin
+          </Header>
+        </Link>
 
         <Button
           className={`hamburger-button ${EXCLUDED_CLASSNAME} btn`}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           <Icon name="bars" className={EXCLUDED_CLASSNAME} />
-          menu
+          Menu
         </Button>
 
         <div ref={ref} className={`nav-menu ${isOpen ? 'open' : ''}`}>
           <div className="menu-flex">
-            <Divider className='menu-divider'/>
+            <Divider className="menu-divider" />
             {routes.map((route) => {
               return (
                 <Menu.Item

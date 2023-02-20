@@ -8,12 +8,15 @@ export default function Message({
   linkTxt,
   linkPath,
   mode, // type of string
-  setOpen
+  setOpen,
 }) {
   const currentMode = useMemo(() => ({ [mode]: !!mode }), [mode]);
+  const onDismiss = useMemo(() =>
+    setOpen ? { onDismiss: () => setOpen(false) } : null
+  );
 
   return (
-    <MassageCard {...currentMode} onDismiss={() => setOpen(false)}>
+    <MassageCard {...currentMode} {...onDismiss}>
       <Container style={{ display: 'flex', alignItems: 'center' }}>
         {iconName && (
           <Icon

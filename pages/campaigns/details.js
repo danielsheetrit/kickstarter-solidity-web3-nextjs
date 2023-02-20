@@ -2,14 +2,15 @@ import { Grid, Label } from 'semantic-ui-react';
 import { Link } from '../../routes';
 
 import Campaign from '../../ethereum/campaign';
-import Meta from '../../components/Meta';
+import web3 from '../../ethereum/web3';
 
+import Meta from '../../components/Meta';
 import PageHeader from '../../components/PageHeader';
 import CampaignDetailsCard from '../../components/CampaignDetailsCard';
 import CampaignDetailsContribute from '../../components/CampaignDetailsContribute';
 import CampaignDetailsAddresses from '../../components/CampaignDetailsAddresses';
+import BreadCrumb from '../../components/BreadCrumb';
 
-import web3 from '../../ethereum/web3';
 
 const { Row } = Grid;
 
@@ -28,6 +29,16 @@ export default function CampaignDetails({
       <PageHeader
         title="Campaign Information"
         description="Campaign balance, minimum contribution, requests amount and more"
+      />
+
+      <BreadCrumb
+        pathes={[
+          { name: 'Campaigns', href: '/' },
+          {
+            name: 'Campaign Information',
+            href: `/campaigns/${campaignAddress}`,
+          },
+        ]}
       />
 
       <Grid style={{ marginTop: 32 }}>

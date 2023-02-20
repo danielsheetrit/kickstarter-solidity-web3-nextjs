@@ -8,14 +8,6 @@ export default function Meta({ title, keywords, description }) {
       <meta name="description" content={description} />
       <meta charSet="utf-8" />
       <link rel="icon" href="/favicon.ico" />
-
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Righteous&family=Sofia+Sans+Extra+Condensed:ital,wght@1,600&display=swap"
-        rel="stylesheet"
-      />
-
       <title>{title}</title>
     </Head>
   );

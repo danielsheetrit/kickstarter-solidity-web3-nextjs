@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button, Input, Grid } from 'semantic-ui-react';
 
-import { Link, Router } from '../routes';
+import { Router } from '../routes';
 import Campaign from '../ethereum/campaign';
 import web3 from '../ethereum/web3';
 
@@ -48,6 +48,7 @@ export default function RequestCreate({ address }) {
         .send({ from: accounts[0] });
 
       setMsgConfig({ txt: 'Request created successfuly', mode: 'success' });
+      Router.replaceRoute(`/campaigns/${address}/requests`);
     } catch (err) {
       setMsgConfig({
         txt: 'Somthing went wrong... try again later',
@@ -61,7 +62,7 @@ export default function RequestCreate({ address }) {
   };
 
   return (
-    <>
+    <div style={{ marginTop: 46 }}>
       <PageHeader
         title="Create Request"
         description="create new request upon project essentials, expenses, etc"
@@ -130,6 +131,6 @@ export default function RequestCreate({ address }) {
           mode={msgConfig.mode}
         />
       )}
-    </>
+    </div>
   );
 }
